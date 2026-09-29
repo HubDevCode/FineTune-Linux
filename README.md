@@ -2,6 +2,7 @@
 
 # FineTune Linux
 ![Logo FineTune](https://github.com/ronitsingh10/FineTune/raw/main/assets/icon.png)
+
 **Port open-source di [FineTune](https://github.com/ronitsingh10/FineTune) per Linux / PipeWire**
 
 Controllo del volume per singola applicazione, boost fino a 4×, routing multi-dispositivo e equalizzazione a 10 bande — per Linux.
