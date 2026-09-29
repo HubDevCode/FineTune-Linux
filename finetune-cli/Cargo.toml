@@ -1,0 +1,11 @@
+[package]
+name = "finetune-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "FineTune Linux - CLI di controllo del backend audio"
+
+[dependencies]
+finetune-core.workspace = true
+finetune-backend-pipewire.workspace = true

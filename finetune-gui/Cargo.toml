@@ -1,0 +1,11 @@
+[package]
+name = "finetune-gui"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+eframe = { version = "0.36", default-features = true }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+finetune-core = { workspace = true }
+finetune-backend-pipewire = { workspace = true }

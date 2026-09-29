@@ -1,0 +1,19 @@
+[package]
+name = "finetune-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "FineTune Linux - core domain, DSP and persistence (port of FineTune macOS)"
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+log.workspace = true
+arc-swap = "1"
+ureq = { version = "2", default-features = false, features = ["tls"], optional = true }
+
+[features]
+default = ["network"]
+network = ["dep:ureq"]

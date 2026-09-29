@@ -1,0 +1,47 @@
+# Rust / Cargo
+/target/
+**/*.rs.bk
+Cargo.lock.orig
+
+# Registry cargo vendorizzato (cache offline locale, ~564 MB)
+# Non va committato: ricreabile con `cargo fetch`
+/.cargo-registry/
+.cargo/config.toml
+.cargo/config
+
+# Binari
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Artefatti di build
+*.o
+*.rlib
+*.rmeta
+*.pdb
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log
+*.log
+
+# Ambienti virtuali Python (non usati, ma harmless)
+.venv/
+venv/
+
+# Impostazioni locali di FineTune (non dovrebbero mai finire qui, per sicurezza)
+settings.json
+settings.backup.json
+autoeq-catalog.json
+.fineTune/

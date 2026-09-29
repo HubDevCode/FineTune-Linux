@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "finetune-core",
+    "finetune-backend-pipewire",
+    "finetune-cli",
+    "finetune-gui",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/ronitsingh10/FineTune"
+
+[workspace.dependencies]
+finetune-core = { path = "finetune-core" }
+finetune-backend-pipewire = { path = "finetune-backend-pipewire" }
+serde = { version = "1", features = ["derive", "rc"] }
+serde_json = "1"
+thiserror = "2"
+log = "0.4"
+pipewire = "0.10"
+# spa (PipeWire SPA bindings) è re-esportato come pipewire::spa; non serve una dipendenza separata.
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
