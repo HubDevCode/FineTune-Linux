@@ -1,0 +1,27 @@
+[Desktop Entry]
+Type=Application
+Name=FineTune
+GenericName=Per-App Volume Mixer
+Comment=Per-app volume, boost, routing, EQ and headphone correction for PipeWire
+Exec=finetune %u
+Icon=io.github.hubdevcode.FineTune
+Terminal=false
+Categories=AudioVideo;Audio;Mixer;Settings;
+Keywords=volume;mixer;equalizer;eq;autoeq;pipewire;audio;routing;
+MimeType=x-scheme-handler/finetune;
+StartupNotify=false
+SingleMainWindow=true
+DBusActivatable=false
+Actions=Toggle;Settings;Quit;
+
+[Desktop Action Toggle]
+Name=Toggle Popup
+Exec=finetune --toggle
+
+[Desktop Action Settings]
+Name=Settings
+Exec=finetune --settings
+
+[Desktop Action Quit]
+Name=Quit FineTune
+Exec=finetune --quit

@@ -1,0 +1,367 @@
+/* FineTune for Linux — visual language of the macOS popup:
+ * frosted dark panel, rounded rows, blue accent sliders, monospaced percentages. */
+
+@define-color ft_accent #2f7bf5;
+@define-color ft_accent_soft alpha(#2f7bf5, 0.22);
+@define-color ft_vu_green #34c759;
+@define-color ft_vu_yellow #ffcc00;
+@define-color ft_vu_red #ff3b30;
+@define-color ft_vu_off alpha(currentColor, 0.18);
+@define-color ft_muted_red #ff453a;
+
+window.ft-popup {
+  background: transparent;
+}
+
+.ft-panel {
+  border-radius: 18px;
+  background-color: @window_bg_color;
+  border: 1px solid alpha(currentColor, 0.12);
+  box-shadow: 0 10px 30px alpha(black, 0.35);
+  margin: 8px;
+}
+
+.ft-header-title {
+  font-size: 0.92em;
+  opacity: 0.75;
+}
+
+.ft-section-title {
+  font-weight: 700;
+  font-size: 0.82em;
+  letter-spacing: 0.12em;
+  opacity: 0.5;
+  margin-top: 6px;
+  margin-bottom: 2px;
+}
+
+.ft-row {
+  border-radius: 12px;
+  padding: 4px 8px;
+  min-height: 44px;
+  transition: background-color 120ms ease;
+}
+
+.ft-row:hover {
+  background-color: alpha(currentColor, 0.05);
+}
+
+.ft-row.ft-focused {
+  background-color: alpha(@ft_accent, 0.14);
+  box-shadow: inset 0 0 0 1px alpha(@ft_accent, 0.5);
+}
+
+.ft-row.ft-expanded,
+.ft-card {
+  background-color: alpha(currentColor, 0.06);
+}
+
+.ft-card {
+  border-radius: 12px;
+  padding: 6px 10px;
+}
+
+.ft-inner-card {
+  border-radius: 10px;
+  background-color: alpha(black, 0.18);
+  padding: 10px 14px;
+}
+
+.ft-dimmed {
+  opacity: 0.45;
+}
+
+.ft-name {
+  font-size: 1.05em;
+}
+
+.ft-name.ft-default {
+  font-weight: 700;
+}
+
+.ft-subtitle {
+  font-size: 0.82em;
+  opacity: 0.55;
+}
+
+.ft-percent {
+  font-family: monospace;
+  font-weight: 600;
+  min-width: 48px;
+}
+
+.ft-device-icon {
+  border-radius: 999px;
+  min-width: 34px;
+  min-height: 34px;
+  padding: 0;
+  background-color: alpha(currentColor, 0.1);
+}
+
+.ft-device-icon.ft-default {
+  background-color: @ft_accent;
+  color: white;
+}
+
+button.ft-icon-button {
+  min-width: 28px;
+  min-height: 28px;
+  padding: 2px;
+  border-radius: 8px;
+  background: none;
+  box-shadow: none;
+}
+
+button.ft-icon-button:hover {
+  background-color: alpha(currentColor, 0.1);
+}
+
+button.ft-icon-button.ft-active,
+button.ft-icon-button:checked {
+  color: @ft_accent;
+}
+
+button.ft-icon-button.ft-muted {
+  color: @ft_muted_red;
+}
+
+.ft-wand-inactive {
+  opacity: 0.35;
+}
+
+scale.ft-slider trough {
+  min-height: 5px;
+  border-radius: 3px;
+  background-color: alpha(currentColor, 0.15);
+}
+
+scale.ft-slider highlight {
+  background-color: @ft_accent;
+  border-radius: 3px;
+}
+
+scale.ft-slider slider {
+  min-width: 14px;
+  min-height: 14px;
+  margin: -6px;
+  background-color: white;
+  box-shadow: 0 1px 3px alpha(black, 0.4);
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+scale.ft-slider:hover slider,
+scale.ft-slider:active slider {
+  opacity: 1;
+}
+
+scale.ft-slider.ft-muted highlight {
+  background-color: alpha(currentColor, 0.35);
+}
+
+scale.ft-eq-slider trough {
+  min-width: 4px;
+  border-radius: 2px;
+  background-color: alpha(currentColor, 0.18);
+}
+
+scale.ft-eq-slider highlight {
+  background: none;
+}
+
+scale.ft-eq-slider slider {
+  min-width: 18px;
+  min-height: 18px;
+  margin: -8px;
+  border-radius: 999px;
+  background-color: white;
+  border: 4px solid #3b3b3b;
+  box-shadow: 0 1px 3px alpha(black, 0.5);
+}
+
+scale.ft-eq-slider mark indicator {
+  min-width: 8px;
+  color: alpha(currentColor, 0.25);
+}
+
+.ft-eq-label {
+  font-family: monospace;
+  font-size: 0.8em;
+}
+
+.ft-eq-unit {
+  font-size: 0.75em;
+  opacity: 0.5;
+}
+
+.ft-badge {
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background-color: alpha(currentColor, 0.14);
+}
+
+.ft-count-badge {
+  border-radius: 999px;
+  min-width: 15px;
+  min-height: 15px;
+  font-size: 0.68em;
+  font-weight: 700;
+  background-color: @ft_accent;
+  color: white;
+  padding: 0 3px;
+}
+
+.ft-tabs {
+  border-radius: 10px;
+  background-color: alpha(currentColor, 0.08);
+  padding: 2px;
+}
+
+.ft-tabs button {
+  border-radius: 8px;
+  min-width: 34px;
+  min-height: 28px;
+  background: none;
+  box-shadow: none;
+}
+
+.ft-tabs button:checked {
+  background-color: alpha(currentColor, 0.16);
+}
+
+.ft-footer-button {
+  border-radius: 999px;
+  padding: 4px 14px;
+  background-color: alpha(currentColor, 0.08);
+}
+
+.ft-link {
+  opacity: 0.6;
+}
+
+.ft-link:hover {
+  opacity: 0.95;
+}
+
+.ft-segmented {
+  border-radius: 10px;
+  background-color: alpha(currentColor, 0.08);
+  padding: 3px;
+}
+
+.ft-segmented button {
+  border-radius: 8px;
+  background: none;
+  box-shadow: none;
+}
+
+.ft-segmented button:checked {
+  background-color: @ft_accent_soft;
+  color: @accent_color;
+}
+
+.ft-picker-row {
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.ft-picker-row:hover {
+  background-color: alpha(currentColor, 0.08);
+}
+
+.ft-picker-row.ft-selected {
+  background-color: alpha(@ft_accent, 0.16);
+}
+
+.ft-priority {
+  font-weight: 700;
+  font-family: monospace;
+  min-width: 22px;
+}
+
+.ft-banner {
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: alpha(@warning_color, 0.18);
+}
+
+.ft-error-text {
+  color: @error_color;
+  font-size: 0.8em;
+}
+
+/* HUD */
+window.ft-hud {
+  background: transparent;
+}
+
+.ft-hud-tahoe {
+  border-radius: 999px;
+  padding: 10px 18px;
+  margin: 12px;
+  background-color: alpha(@window_bg_color, 0.92);
+  border: 1px solid alpha(currentColor, 0.12);
+  box-shadow: 0 6px 20px alpha(black, 0.35);
+  min-width: 290px;
+}
+
+.ft-hud-classic {
+  border-radius: 22px;
+  padding: 18px;
+  margin: 12px;
+  background-color: alpha(@window_bg_color, 0.85);
+  box-shadow: 0 6px 20px alpha(black, 0.35);
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.ft-hud-title {
+  font-weight: 600;
+}
+
+.ft-hud-segment {
+  min-width: 9px;
+  min-height: 6px;
+  border-radius: 1px;
+  background-color: alpha(currentColor, 0.2);
+}
+
+.ft-hud-segment.ft-on {
+  background-color: currentColor;
+}
+
+progressbar.ft-hud-bar trough,
+progressbar.ft-hud-bar progress {
+  min-height: 6px;
+  border-radius: 3px;
+}
+
+progressbar.ft-hud-bar progress {
+  background-color: @ft_accent;
+}
+
+.ft-icon-tile {
+  border-radius: 8px;
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.ft-icon-tile.ft-selected {
+  background-color: alpha(@ft_accent, 0.3);
+}
+
+.ft-theme-tile {
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.ft-theme-tile:checked {
+  box-shadow: inset 0 0 0 2px @ft_accent;
+}
+
+.ft-mono {
+  font-family: monospace;
+}
