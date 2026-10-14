@@ -1,3 +1,7 @@
+> [!WARNING]
+> **Deprecated.** This is the old Rust implementation of FineTune-Linux and is no longer maintained.
+> The current version lives on the [`main`](https://github.com/HubDevCode/FineTune-Linux) branch.
+
 <div align="center">
 
 # FineTune Linux
