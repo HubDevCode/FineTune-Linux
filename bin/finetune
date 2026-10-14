@@ -1,0 +1,9 @@
+#!/bin/sh
+# FineTune launcher: works from a source checkout or an installed prefix.
+HERE="$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)"
+if [ -d "$HERE/finetune" ]; then
+    export PYTHONPATH="$HERE${PYTHONPATH:+:$PYTHONPATH}"
+elif [ -d "$HERE/share/finetune/finetune" ]; then
+    export PYTHONPATH="$HERE/share/finetune${PYTHONPATH:+:$PYTHONPATH}"
+fi
+exec python3 -m finetune "$@"
